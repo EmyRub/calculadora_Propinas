@@ -32,12 +32,12 @@ export default function TipPercentageForm({ dispatch, tip }: TipPercentageFormPr
             <form action="">
                 {tipOptions.map(tipOption => (
                     <div key={tipOption.id} className="flex gap-2">
-                        <label htmlFor="{tipOption.id}">{tipOption.label}</label>
+                        <label htmlFor={tipOption.id}>{tipOption.label}</label>
 
                         <input
-                            type="radio"
-                            id="{tipOption.id}"
                             name="tip"
+                            type="radio"
+                            id={tipOption.id}
                             value={tipOption.value}
                             onChange={e => dispatch({ type: 'add-tip', payload: { value: +e.target.value } })}
                             checked={tipOption.value == tip}
