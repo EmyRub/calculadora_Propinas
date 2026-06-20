@@ -3,8 +3,8 @@ import type { MenuItem, OrderItem } from "../types"
 
 
 export default function useOrder() {
-    const [order, setOrder] = useState<OrderItem[]>([])
     const [tip, setTip] = useState(0)
+    const [order, setOrder] = useState<OrderItem[]>([])
 
     const addItem = (item: MenuItem) => {
 

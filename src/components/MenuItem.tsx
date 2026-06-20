@@ -2,6 +2,7 @@ import { Dispatch } from "react"
 import type { MenuItem } from "../types"
 import { OrderActions } from "../reducers/order-reducer"
 
+// los props pueden ser opcionales
 type menuItemProps = {
     item: MenuItem,
     dispatch: Dispatch<OrderActions>

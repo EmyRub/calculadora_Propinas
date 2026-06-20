@@ -11,6 +11,8 @@ type OrderTotalProps = {
 
 export default function OrderTotals({ order, tip, dispatch }: OrderTotalProps) {
 
+    // Usememo se ejecuta cada vez que el order o el tip cambian, y se encarga de memorizar el resultado de la función, evitando cálculos innecesarios en cada renderizado.
+    // Esto es especialmente útil cuando el cálculo es costoso o cuando se quiere evitar que se recalculen valores que no han cambiado.
     const subtotalAmount = useMemo(() => order.reduce((total, item) => total + (item.quantity * item.price), 0), [order])
     const tipAmount = useMemo(() => subtotalAmount * tip, [tip, order])
     const totalAmount = useMemo(() => subtotalAmount + tipAmount, [tip, order])
